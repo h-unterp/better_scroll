@@ -61,7 +61,9 @@ class VideoListWidgetState extends State<VideoListWidget> {
                           bufferForPlaybackAfterRebufferMs: 2000),
                 ),
                 configuration: const BetterPlayerConfiguration(
-                    autoPlay: false, aspectRatio: 1, handleLifecycle: true),
+                    autoPlay: false,
+                    aspectRatio: 16 / 9,
+                    handleLifecycle: true),
                 //key: Key(videoListData.hashCode.toString()),
                 playFraction: 0.8,
                 betterPlayerListVideoPlayerController: controller,
