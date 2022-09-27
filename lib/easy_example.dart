@@ -2,12 +2,12 @@ import 'dart:math';
 
 import 'package:better_scroll/easy_example_provider.dart';
 import 'package:better_scroll/video_list/video_list_data.dart';
+import 'package:better_scroll/video_play.dart';
 import 'package:flutter/material.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 import 'package:riverpod_infinite_scroll/riverpod_infinite_scroll.dart';
 
 import 'video_list/constants.dart';
-import 'video_list/video_list_widget.dart';
 
 class EasyExample extends StatefulWidget {
   const EasyExample({Key? key}) : super(key: key);
@@ -51,10 +51,7 @@ class _EasyExampleState extends State<EasyExample> {
         provider: easyExampleProvider,
         // a function that build a single Post
         itemBuilder: (context, item, index) {
-          VideoListData videoListData = dataList[index];
-          return VideoListWidget(
-            videoListData: videoListData,
-          );
+          return VideoPlay(pathh: dataList[index].videoUrl);
         },
 
         // The type of list we want to render
